@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const basketContainer = document.getElementById('BasketContainer');
     const basketModal = document.getElementsByClassName('basketContainerModal')[0];
     const basketClose = document.getElementById('BasketClose');
-    const prevSlide = document.getElementById('PrevSlide');
-    const nextSlide = document.getElementById('NextSlide');
-    let slideIndex = 1;
+    const PrevSlide = document.getElementById('PrevSlide');
+    const NextSlide = document.getElementById('NextSlide');
+    const slideIndex = 1;
     showSlides(slideIndex);
     function plusSlides(n) {
         showSlides(slideIndex += n);
@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
-    prevSlide.onclick = () => { plusSlides(-1) }
-    nextSlide.onclick = () => { plusSlides(1) }
+    PrevSlide.onclick = () => { }
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");

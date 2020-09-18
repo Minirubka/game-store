@@ -38,6 +38,8 @@
 
   .slideshow_containe {
     max-width: 1000px;
+    display: flex;
+    justify-content: center;
     position: relative;
     margin: auto;
   }
