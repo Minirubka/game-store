@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const basketClose = document.getElementById('BasketClose');
     const prevSlide = document.getElementById('PrevSlide');
     const nextSlide = document.getElementById('NextSlide');
+    const sliderDots = document.getElementById('SliderDots');
+    console.dir(sliderDots);
     let slideIndex = 1;
     showSlides(slideIndex);
     function plusSlides(n) {
@@ -17,9 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     prevSlide.onclick = () => { plusSlides(-1) }
     nextSlide.onclick = () => { plusSlides(1) }
+    for (let i = 0; i < sliderDots.children.length; i++) {
+        sliderDots.children[i].onclick = (event) => { currentSlide(event.target.dataset.slide) }
+    }
+
     function showSlides(n) {
         let i;
-        let slides = document.getElementsByClassName("mySlides");
+        let slides = document.getElementsByClassName("slide");
         let dots = document.getElementsByClassName("dot");
 
         if (n > slides.length) {
@@ -29,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
             slideIndex = slides.length
         }
         for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+            slides[i].classList.remove("active");
         }
         for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace("active", "");
+            dots[i].classList.remove("active");
         }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += "active";
+        slides[slideIndex - 1].classList.add("active")
+        dots[slideIndex - 1].classList.add("active");
     }
     const init = function () {
         if (localStorage.getItem('basket') === null) {
@@ -55,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             spanTitle.classList = 'basketProductTitle';
             div.appendChild(spanTitle);
             let productPrice;
-            for (let product of store.products) {
+            for (let product of products) {
                 if (product.title === basket[i].title) {
                     productPrice = product.price;
                 }
@@ -95,8 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     init();
     // Карточки товаров
-    console.log(JSON.stringify(store, null, 2));
-    for (let product of store.products) {
+    console.log(JSON.stringify(products, null, 2));
+    for (let product of products) {
         const card = document.createElement('div');
         card.classList = 'productItem';
         container.appendChild(card);
