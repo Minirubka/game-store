@@ -13,28 +13,36 @@
     <div class="slayder"></div>
     <div class="filter"></div>
     <div class="cards"></div>
-    <div class="slideshow_container">
-        <a href="https://google.com" class="slide">
-            <img src="images/Game_Store1.jpg" style="width: 100%;" alt="">
-            <div class="text"> </div>
-        </a>
-        <a href="#poiuu" class="slide">
-            <img src="images/Game_Store2.jpg" style="width: 100%;" alt="">
-            <div class="text"> </div>
-        </a>
-        <a href="#mnbvcx" class="slide">
-            <img src="images/Game_Store3.jpg" style="width: 100%;" alt="">
-            <div class="text"> </div>
-        </a>
-        <a class="prev" id="PrevSlide">&#10094</a>
-        <a class="next" id="NextSlide">&#10095</a>
+    <div class="slideshow_container" id="SliderContainer">
+        <span class="arrow arrowLeft" id="PrevSlide">&#10094</span>
+        <div class="sliderImages">
+            <div class="slide">
+                <a href="https://google.com">
+                    <img src="images/Game_Store1.jpg" alt="">
+                    <div class="text"> </div>
+                </a>
+            </div>
+            <div class="slide">
+                <a href="#poiuu">
+                    <img src="images/Game_Store2.jpg" alt="">
+                    <div class="text"> </div>
+                </a>
+            </div>
+            <div class="slide">
+                <a href="#mnbvcx">
+                    <img src="images/Game_Store3.jpg" alt="">
+                    <div class="text"> </div>
+                </a>
+            </div>
+        </div>
+        <span class="arrow arrowRight" id="NextSlide">&#10095</span>
     </div>
     <br>
 
     <div id="SliderDots" style="text-align: center;">
+        <span class="dot" data-slide="0"></span>
         <span class="dot" data-slide="1"></span>
         <span class="dot" data-slide="2"></span>
-        <span class="dot" data-slide="3"></span>
     </div>
 
     <div class='basket'>
