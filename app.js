@@ -10,38 +10,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const sliderDots = document.getElementById('SliderDots');
     console.dir(sliderDots);
     let slideIndex = 1;
-    showSlides(slideIndex);
+    showSlides();
     function plusSlides(n) {
-        showSlides(slideIndex += n);
+        slideIndex += n
+        showSlides();
     }
     function currentSlide(n) {
-        showSlides(slideIndex = n);
+        slideIndex = n;
+        showSlides();
     }
     prevSlide.onclick = () => { plusSlides(-1) }
     nextSlide.onclick = () => { plusSlides(1) }
+    setInterval(() => { plusSlides(1) }, 5000);
     for (let i = 0; i < sliderDots.children.length; i++) {
-        sliderDots.children[i].onclick = (event) => { currentSlide(event.target.dataset.slide) }
+        sliderDots.children[i].onclick = (event) => { currentSlide(+event.target.dataset.slide) }
     }
 
-    function showSlides(n) {
-        let i;
+    function showSlides() {
         let slides = document.getElementsByClassName("slide");
         let dots = document.getElementsByClassName("dot");
 
-        if (n > slides.length) {
-            slideIndex = 1
+        if (slideIndex === slides.length) {
+            slideIndex = 0
         }
-        if (n < 1) {
-            slideIndex = slides.length
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1
         }
-        for (i = 0; i < slides.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
             slides[i].classList.remove("active");
-        }
-        for (i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
-        slides[slideIndex - 1].classList.add("active")
-        dots[slideIndex - 1].classList.add("active");
+        slides[slideIndex].classList.add("active")
+        dots[slideIndex].classList.add("active");
     }
     const init = function () {
         if (localStorage.getItem('basket') === null) {
