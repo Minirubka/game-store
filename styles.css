@@ -101,32 +101,33 @@
   }
   .slideshow_container{
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: center;
+    flex-direction: row;
   }
-  .slide {
+  .slide {    
     display: inline-block;
     width: 0;
     height: 100vh;
     overflow: hidden;
   }
-  .slide img {
+  .slide img {    
     height: 100vh;
   }
-  .slide.active {
+  .slide.active {    
     width: 100%;
     animation-name: fade;
-    animation-duration: .5s;
+    animation-duration: .7s;
   }
 
 
   @keyframes fade {
     from {
-      width: 0;
-      /* opacity: 0; */
+     /* width: 0;*/
+       opacity: 0; 
     }
     to {
-      width: 100%;
-      /* opacity: 1; */
+      /*width: 100%;*/
+       opacity: 1; 
     }
   }
 
