@@ -3,6 +3,13 @@
   margin: 0;
   padding: 0;
 }
+
+/*body {
+background-image: url(background.jpg);
+background-repeat: no-repeat; 
+background-position: top center;
+background-attachment: fixed;
+}*/
 .productItem {
     display: flex;
     flex-direction: column;
@@ -111,7 +118,7 @@
 }
 #SliderContainer > .arrow:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  color: rgb(0, 225, 255);
 }
 #SliderContainer > .arrow.arrowLeft {
   left: 0;
