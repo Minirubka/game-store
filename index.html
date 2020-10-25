@@ -8,54 +8,73 @@
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
-<body style="background-image: url(background1.jpg); background-repeat: no-repeat; background-position: top center">
-    <div class="head"></div>
-    <div class="slayder"></div>
-    <div class="filter"></div>
-    <div class="cards"></div>
-    <div class="slideshow_container" id="SliderContainer">
-        <span class="arrow arrowLeft" id="PrevSlide">&#10094</span>
-        <div class="sliderImages">
-            <div class="slide">
-                <a href="https://google.com">
-                    <img src="images/Game_Store1.jpg" alt="">
-                    <div class="text"> </div>
-                </a>
-            </div>
-            <div class="slide">
-                <a href="#poiuu">
-                    <img src="images/Game_Store2.jpg" alt="">
-                    <div class="text"> </div>
-                </a>
-            </div>
-            <div class="slide">
-                <a href="#mnbvcx">
-                    <img src="images/Game_Store3.jpg" alt="">
-                    <div class="text"> </div>
-                </a>
-            </div>
+<body>
+    <div class="header">
+        <h1>GameStore</h1>
+        <div>
+            <img src=" ./images/gamepad.png" class="gamepadImg">
         </div>
-        <span class="arrow arrowRight" id="NextSlide">&#10095</span>
+        <div class='basket'>
+            <img src=" ./images/basket.png" class="basketImg" id="BasketButton">
+        </div>
+        <div class='basketContainerModal'>
+            <div id="BasketContainer"></div>
+            <button id='BasketClose'>Close</button>
+        </div>
     </div>
-    <br>
-
-    <div id="SliderDots" style="text-align: center;">
-        <span class="dot" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
+    <div class="slayder">
+        <div class="slideshow_container" id="SliderContainer">
+            <span class="arrow arrowLeft" id="PrevSlide">&#10094</span>
+            <div class="sliderImages">
+                <div class="slide">
+                    <a href="https://google.com">
+                        <img src="images/Game_Store1.jpg" alt="">
+                        <div class="text"> </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#poiuu">
+                        <img src="images/Game_Store2.jpg" alt="">
+                        <div class="text"> </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#mnbvcx">
+                        <img src="images/Game_Store3.jpg" alt="">
+                        <div class="text"> </div>
+                    </a>
+                </div>
+            </div>
+            <span class="arrow arrowRight" id="NextSlide">&#10095</span>
+        </div>
+        <br>
+        <div id="SliderDots" style="text-align: center;">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
     </div>
-
-    <div class='basket'>
-        <img src=" ./images/basket.png" class="basketImg" id="BasketButton">
-        <span id='BasketCounter'>0</span>
+    <div class="filter">
+        <div class="filter-container">
+            <span>
+                <input id="FilterAll" type="radio" name="filter">
+                <label for="FilterAll">All</label>
+            </span>
+            <span>
+                <input id="FilterCampein" type="radio" name="filter">
+                <label for="FilterCampein">Campein</label>
+            </span>
+            <span>
+                <input id="FilterMultiplayer" type="radio" name="filter">
+                <label for="FilterMultiplayer">Multiplayer</label>
+            </span>
+        </div>
     </div>
-    <div class='basketContainerModal'>
-        <div id="BasketContainer"></div>
-        <button id='BasketClose'>Close</button>
+    <div class="cards">
+        <div id="ProductContainer"></div>
+        <script src="./data.js"></script>
+        <script src="./app.js"></script>
     </div>
-    <div id="ProductContainer"></div>
-    <script src="./data.js"></script>
-    <script src="./app.js"></script>
 </body>
 
 </html>

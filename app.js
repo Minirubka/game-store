@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('ProductContainer');
     const basketButton = document.getElementById('BasketButton');
-    const basketCounter = document.getElementById('BasketCounter');
     const basketContainer = document.getElementById('BasketContainer');
     const basketModal = document.getElementsByClassName('basketContainerModal')[0];
     const basketClose = document.getElementById('BasketClose');
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem('basket', JSON.stringify([]));
         }
         const basket = JSON.parse(localStorage.getItem('basket'));
-        basketCounter.textContent = basket.length;
     }
     const showBasket = function (event) {
         basketModal.style.display = 'flex';
@@ -95,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 count: 1
             }
         );
-        basketCounter.textContent = basket.length;
         localStorage.setItem('basket', JSON.stringify(basket));
         showBasket();
     }

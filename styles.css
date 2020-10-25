@@ -4,25 +4,78 @@
   padding: 0;
 }
 
-/*body {
-background-image: url(background.jpg);
+body {
+background-image: url(./images/background1.jpg);
 background-repeat: no-repeat; 
 background-position: top center;
 background-attachment: fixed;
-}*/
+}
+
+.header {
+  display : flex;
+}
+
+h1 {
+  font-family: Gagalin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 70px;
+  line-height: 61px;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+.gamepadImg {
+width: 100px;
+height: 100px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-container {
+  background-color:black;
+  padding: 10px 20px; 
+  font-family: Gagalin;
+  font-size: 30px;
+  line-height: 41px;
+  color: rgb(114, 114, 114);
+}
+
+.filter-container > input {
+  display: none;
+}
+
+.filter-container > span {
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.filter-container > span:first-child {
+  margin-left: 0;
+}
+
+.filter-container input [type=radio]:checked + label {
+  color:  rgb(0, 225, 255);
+}
+
 .productItem {
     display: flex;
     flex-direction: column;
     width: 230px;
     padding: 30px;
     border-radius: 15px;
-    border: 3px solid orange;
-    background: gray;
+    border: 3px solid black;
+    background:rgb(0, 155, 175);
     align-items: center;
+    padding:10px 0px;
   }
 
   .addToBasket {
-    background: orange;
+    background:  rgb(0, 225, 255);
     border-radius: 15px;
   }
 
@@ -63,7 +116,7 @@ background-attachment: fixed;
     height: 13px;
     width: 13px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: #717171;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -71,8 +124,13 @@ background-attachment: fixed;
   
   .dot.active,
   .dot:hover {
-    background-color: #717171;
+    background-color:rgb(0, 155, 175);
   }
+
+  .basketContainerModal {
+    z-index: 101;
+  }
+
 #SliderContainer{
     display: flex;
     justify-content: center;
@@ -80,7 +138,7 @@ background-attachment: fixed;
     width: auto;
 }
 #SliderContainer > .sliderImages {
-    display: flex;
+    display: flex;    
     height: 720px;
     width: 1280px;
 }
@@ -147,8 +205,16 @@ background-attachment: fixed;
   border: 1px solid orangered;
   background: orange;
   padding: 0 10px;
+  z-index: 20;
 }
 
 #BasketClose {
   background: orange;
+}
+
+#BasketButton {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: fixed ;
 }
